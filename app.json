@@ -1,0 +1,22 @@
+{
+  "expo": {
+    "name": "Black Diamond Tours",
+    "slug": "black-diamond-tours",
+    "scheme": "blackdiamondtours",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "plugins": ["expo-router"],
+    "experiments": { "typedRoutes": true },
+    "android": {
+      "package": "np.com.blackdiamondtours.mobile",
+      "config": {
+        "googleMaps": { "apiKey": "${GOOGLE_MAPS_API_KEY}" }
+      }
+    },
+    "ios": {
+      "bundleIdentifier": "np.com.blackdiamondtours.mobile"
+    }
+  }
+}

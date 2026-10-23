@@ -1,0 +1,5 @@
+import { Tabs } from "expo-router";
+import { Ionicons } from "@expo/vector-icons";
+import { useAppTheme } from "@/src/theme/ThemeProvider";
+const icons:Record<string,keyof typeof Ionicons.glyphMap>={index:"compass-outline",explore:"map-outline",saved:"heart-outline",trips:"briefcase-outline",profile:"person-circle-outline"};
+export default function TabLayout(){const {colors}=useAppTheme();return <Tabs screenOptions={({route})=>({headerShown:false,tabBarActiveTintColor:colors.blue,tabBarInactiveTintColor:colors.muted,tabBarStyle:{height:66,paddingTop:8,paddingBottom:8,borderTopColor:colors.border,backgroundColor:colors.tabBar},tabBarLabelStyle:{fontSize:10,fontWeight:"700"},tabBarIcon:({color,size})=><Ionicons name={icons[route.name]??"ellipse-outline"} color={color} size={size}/>})}><Tabs.Screen name="index" options={{title:"Home"}}/><Tabs.Screen name="explore" options={{title:"Explore"}}/><Tabs.Screen name="saved" options={{title:"Saved"}}/><Tabs.Screen name="trips" options={{title:"My Trips"}}/><Tabs.Screen name="profile" options={{title:"Profile"}}/></Tabs>}
